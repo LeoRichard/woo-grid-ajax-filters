@@ -39,12 +39,12 @@ if ( $out_of_stock ) {
 <article <?php wc_product_class( $classes ); ?> >
 
 		<?php
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $query->post->ID ), 'woocommerce_thumbnail' );
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'woocommerce_thumbnail' );
 		?>
 
 	<div class="product-img box-image">
 		<figure>
-			<img src="<?php  echo $image[0]; ?>" data-id="<?php echo $query->post->ID; ?>">
+			<img src="<?php  echo $image[0]; ?>" data-id="<?php echo $post->ID; ?>">
 		</figure>
 		<a class="all-over-thumb-link" href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"></a>
 		<div class="post-icon link_overlay">
@@ -52,7 +52,8 @@ if ( $out_of_stock ) {
 				<li>
 					<a href="<?php the_permalink(); ?>" aria-label="More">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-							<path d="M12 20c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm24 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm-12 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path>
+							<path d="M12 20c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm24 0c-2.21 0-4 1.79-4 4s1.79 4 4
+							4 4-1.79 4-4-1.79-4-4-4zm-12 0c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path>
 						</svg>
 					</a>
 				</li>

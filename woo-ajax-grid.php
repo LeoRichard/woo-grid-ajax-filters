@@ -242,6 +242,9 @@ function wag_get_template_part( $slug, $name = '' ) {
  */
 function wag_add_to_cart_btn( $id ) {
 
+	  global $wp;
+
+		$current_url = home_url(add_query_arg(array(),$wp->request));
     $_product = wc_get_product( $id );
     $button_link = '#';
     $button_txt = '';
