@@ -20,6 +20,7 @@
     	//ajax filter function
     	function wag_ajax_get_productdata( term_ID ) {
 
+          //add local cache
           var localCache = {
               data: {},
               remove: function (term_ID) {
@@ -44,7 +45,8 @@
                 var complete  = originalOptions.complete || $.noop,
                      success  = originalOptions.success || $.noop;
 
-                term_ID = originalOptions.data.term_ID;
+            if(originalOptions.data) 
+                var term_ID = originalOptions.data.term_ID;
 
                 //remove jQuery cache as we have our own localCache
                 options.cache = false;
